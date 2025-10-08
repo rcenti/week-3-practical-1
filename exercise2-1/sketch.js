@@ -1,4 +1,3 @@
-
 let fillColour;
 let x = 50;
 let y = 50;
@@ -26,6 +25,19 @@ function keyPressed() {
         x -= 5;
     }
     if (keyCode === RIGHT_ARROW) {
+        x += 5;
+    }
+
+    if (key === 'w' || key === 'W') {
+        y -= 5;
+    } 
+    if (key === 's' || key === 'S') {
+        y += 5;
+    }
+    if (key === 'a' || key === 'A') {
+        x -= 5;
+    }
+    if (key === 'd' || key === 'D') {
         x += 5;
     }
 
