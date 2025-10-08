@@ -45,7 +45,5 @@ function keyPressed() {
 }
 
 function mouseClicked() {
-    if (mouseX > x && mouseX < x + 500 && mouseY > y && mouseY < y + 500) {
         fillColour = color(random(255), random(255), random(255));
     }
-}
