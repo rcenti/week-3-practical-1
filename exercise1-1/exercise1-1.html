@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W3P1 - Exercise 1.1</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.1</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>The goal of this exercise is to familiarise yourself with using the browser console to identify bugs 
+                and errors in your code.
+            </p>
+            <p>The code in <strong>exercise1-1/sketch.js</strong> is <em>supposed</em> to produce the output shown in 
+                the video below. Run the code in your browser and you will see that it does not! The sketch stops after only one circle is drawn.</p>
+            <p>The code contains two bugs--one is an error that causes the program to crash and the other is a logic mistake 
+                that does not cause a crash but also does not produce the right output.
+            </p>
+            <p>When your code appears to crash (e.g. no shapes are drawn even though the code is present), open the browser console 
+                by going to the View menu (in Chrome), selecting Developer, then choosing JavaScript Console. If there is an 
+                error message, it will help you identify what and where the problem is.
+            </p>
+            <p>Fix the error in the code by opening the Console and reading the error message. To the right of the code, you should see 
+                a message that says "sketch.js:" followed by a number. This tells you that the error occurred in your sketch.js file 
+                and the number tells you the line number that the error is likely on. Use this information to help you 
+                fix the error.
+            </p>
+            <p>
+                When the error is fixed, you will see that only one row of circles is drawn. There is no error message this time 
+                but the code is misbehaving. This suggests a logic error, likely with one of the variables used to position 
+                the circles. Try using the p5.js <code>print()</code> function or JavaScript's <code>console.log()</code> to print 
+                the values of <code>circleX</code> and <code>circleY</code> at the end of <code>draw()</code>. You will need to 
+                work out what <code>circleX</code> and <code>circleY</code> should be as the sketch progresses in order to make 
+                use of the messages printed to the console.
+            </p>
+            <p>The bug is very small and you shouldn't need to make big changes to the code!</p>
+            <p>When you are done, check your work using <a href="./check-exercise1-1.html">check-exercise1-1.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="400" controls>
+                    <source src="./assets/exercise1-1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>The error that causes the program to crash is a typo in a variable name. The variable name and line number 
+                        are given in the error message.
+                    </p>
+                    <p>The logic error is harder to identify. Here is what to look for when you print the values 
+                        of <code>circleX</code> and <code>circleY</code>:</p>
+                    <ul>
+                        <li><code>circleX</code> should start at half the width of the circle and increase by the width of the circle until the circles reach the right edge. Then, because of the % operator, 
+                        <code>circleX</code> should return to its original value before increasing again as before.</li>
+                        <li><code>circleY</code> should start at half the width of the circle and stay the same until the circles reach the right edge of the screen. At this point, 
+                        <code>circleY</code> should increase by the width of the circle, starting a new row. This pattern should continue until the circles reach the bottom edge. 
+                        Then, <code>circleY</code> should return to its original value.</li>
+                    </ul>
+                    <p>The error is caused by the order of operations in a calculation (think BODMAS or PEMDAS!). The modulo operator has the 
+                        same precedence as multiplication or division.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

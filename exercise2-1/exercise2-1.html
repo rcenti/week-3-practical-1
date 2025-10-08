@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W3P1 - Exercise 2.1</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 2.1</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise2-1/sketch.js</strong>, add the <code>setup()</code> and <code>draw()</code> functions, 
+            and create a 600 by 600 pixel canvas. Draw a shape of your choosing in the centre of the canvas and 
+            make it take up most of the canvas space, leaving a margin of about 50 pixels around the shape.</p>
+            <p>Generate a random fill colour and save it as a global variable. To do this, declare but don't initialise a global 
+                variable called <code>fillColour</code>. In <code>setup()</code>, initialise <code>fillColour</code> with 
+                the following line:<br>
+                <code>fillColour = color(random(255), random(255), random(255));</code></p>
+            <p>The <a href="https://p5js.org/reference/p5/color" target="_blank"><code>color()</code></a> function is a p5.js function that is called in the same way as other colour-related 
+                functions such as <code>fill()</code> and <code>background()</code>. Use <code>fillColour</code> to set the fill for all shapes in your sketch by calling <code>fill(fillColour);</code>.</p>
+            <p>Implement the <code>keyPressed()</code> event function and use it to make the shape move by 5 pixels 
+            when the user presses their arrow keys or the w-a-s-d keys. To be specific:</p>
+            <ul>
+                <li>When the user presses the UP arrow key or the w key, move the shape up by 5 pixels.</li>
+                <li>When the user presses the LEFT arrow key or the a key, move the shape left by 5 pixels.</li>
+                <li>When the user presses the DOWN arrow key or the s key, move the shape down by 5 pixels.</li>
+                <li>When the user presses the RIGHT arrow key or the d key, move the shape right by 5 pixels.</li>
+            </ul>
+            <p>You will need to use the <a href="https://p5js.org/reference/p5/keyCode" target="_blank"><code>keyCode</code></a> system variable when checking if an arrow key is pressed 
+            and the <a href="https://p5js.org/reference/p5/key" target="_blank"><code>key</code></a> system variable when checking if a w-a-s-d key is pressed.</p>
+            <p>When you are done, check your work using <a href="./check-exercise2-1.html">check-exercise2-1.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="600" controls>
+                    <source src="./assets/exercise2-1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You will need global variables to store the current x and y coordinates of your shape. Draw the shape in <code>draw()</code> using 
+                    your global variables to set its location.</p>
+                    <p>Then, add the <code>keyPressed()</code> event function. The eventFunctions example from last lecture uses this 
+                    function so use it as a reference if you are unsure.</p>
+                    <p>Inside <code>keyPressed()</code>, you will need to write a conditional that checks the values of <code>keyCode</code> and <code>key</code> and 
+                    moves the shape accordingly. The lineDrawingKeyboard example from lecture shows how to check <code>key</code> values. Use <code>keyCode</code> to 
+                check for the arrow keys and <code>key</code> to check for the letter keys.</p>
+                    <p>Your conditional should have one branch for each bullet point in the list describing expected behaviour above.</p>
+                    <p>Useful links in the p5.js reference:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/p5/keyCode" target="_blank"><code>keyCode</code></a>. This page also shows how to check if an arrow key was pressed.</li>
+                        <li><a href="https://p5js.org/reference/p5/key" target="_blank"><code>key</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/keyPressed" target="_blank"><code>keyPressed()</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

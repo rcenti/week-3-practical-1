@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W3P1 - Exercise 2.3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 2.3</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise2-3/sketch.js</strong>, add the <code>setup()</code> and <code>draw()</code> functions 
+                and create a canvas of 600px by 600px. Put a rectangle or square somewhere on the canvas. The shape can be 
+                any size you like as long as there is room to move it around. Set the background colour to black and the fill colour to white.</p>
+            <p>Make it possible to drag the shape around the canvas. The mouse button must be held down and the mouse pointer 
+                must be over the shape when the mouse button is <strong>pressed</strong>. While the shape is being dragged, 
+                change its fill colour (to any colour). As soon as the dragging stops, change the fill colour back to white.</p>
+            <p>When you are done, check your work using <a href="./check-exercise2-3.html">check-exercise2-3.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="600" controls>
+                    <source src="./assets/exercise2-3.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>Below are some suggestions. Feel free to try a different approach.</p>
+                    <ul>
+                        <li>Create a global variable called <code>shapeSelected</code> that will store 
+                        a boolean indicating whether the mouse was over the shape when the mouse 
+                        button was pressed. Note that the calculation for determining if the cursor is 
+                        over the shape will look slightly different if you have set <code>rectMode()</code> to 
+                        CENTER than if you're using the default drawing mode.</li>
+                        <li>Implement the <code>mousePressed()</code> event function. Inside <code>mousePressed()</code>, check 
+                        if the mouse is over the shape and, if it is, set <code>shapeSelected</code> to <code>true</code>. There 
+                        are examples showing the calculation to check if the mouse is over a rectangle in the lecture code.</li>
+                        <li>Create the dragging effect and update the shape fill using <code>mouseDragged()</code>. Don't forget to check <code>shapeSelected</code> before 
+                            moving the shape.</li>
+                        <li>Use <code>mouseReleased()</code> to turn off <code>shapeSelected</code> and set the fill colour 
+                        back to white.</li>
+                    </ul>
+                    <p>Useful links in the p5.js reference:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/p5/mouseX" target="_blank"><code>mouseX</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/mouseY" target="_blank"><code>mouseY</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/mouseDragged" target="_blank"><code>mouseDragged()</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/mousePressed" target="_blank"><code>mousePressed()</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/mouseReleased" target="_blank"><code>mouseReleased()</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
